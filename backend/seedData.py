@@ -1,10 +1,12 @@
+import os
+from dotenv import load_dotenv
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from config.database import Base
 from models import Usuario, Receta, Ingrediente, ListaCompra
 import random
-
-DATABASE_URL = "postgresql://recetario_db_umim_user:dKZeM7dUPtt4HkS0TNB7BoWp5goBNyb5@dpg-d3jaanili9vc73a6u7dg-a.frankfurt-postgres.render.com/recetario_db_umim"
+load_dotenv()
+DATABASE_URL = os.environ.get("DATABASE_URL")
 engine = create_engine(DATABASE_URL, echo=True)
 Session = sessionmaker(bind=engine)
 session = Session()
