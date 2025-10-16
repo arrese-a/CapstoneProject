@@ -1,0 +1,35 @@
+.vercel
+.env
+__pycache__
+.en.production
+*.pyc
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+/front/node_modules
+/front/dist
+
+*.local
+package-lock.json
+
+# Directorios de dependencias
+/node_modules
+/vendor
+
+# Archivos de logs
+*.log
+
+# Archivos de configuración y temporales
+.env
+*.tmp
+
+# Archivos específicos del sistema operativo o IDE
+.DS_Store
+Thumbs.db
+.vscode

@@ -1,0 +1,41 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+
+.signup-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: calc(100vh - 60px);
+    background-image: url("../../public/fondo-signup.png"); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+
+    .columna-derecha-signup{
+        display:grid;
+        grid-template-columns: 1fr;
+        align-items: center;
+        justify-items: start;
+        width:100%;
+        margin-bottom: 20vh;
+        @include estiloColumna();
+    }
+            
+}
+
+@media (max-width: 600px) {
+    .signup-wrapper {
+        grid-template-columns: 1fr;
+        height: auto;
+        padding: 0;
+        background-image: none;
+        .columna-derecha-signup{
+            justify-items: center;
+
+            .input-wrapper input {
+                margin-bottom: 10px;
+            }
+
+        }
+    }
+}

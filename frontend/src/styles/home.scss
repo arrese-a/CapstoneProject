@@ -1,0 +1,71 @@
+@use "./variables" as *;
+
+.home-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height:100vh;
+    padding-right: 80px;
+    background-image: url("../../public/fondo-home.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+
+    .columna-derecha{
+        display:flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        h1 {
+            font-size: 40px !important;
+            text-align: center;
+        }
+        .home-img-wrapper{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: stretch;
+            height: 50vh;
+
+            .home-img-link {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-bottom: 10px;
+                margin-right: 20px;
+                h2{
+                    font-size: 35px;
+                    pointer-events: auto;
+                }
+                img {
+                    width: 120px;
+                    color: #49250f;
+                    margin-right: 30px;
+                }
+            }
+            .home-log-wrapper {
+                display: flex;
+                margin-top: 30px;
+            }
+        }                   
+    }
+}
+
+@media (max-width: 600px) {
+    .home-wrapper {
+        grid-template-columns: 1fr;
+        height: auto;
+        padding: 0;
+        background-image: none;
+        .columna-derecha .home-img-wrapper .home-img-link{
+            h2{
+                font-size: 23px;
+                pointer-events: auto;
+            }
+            img {
+                width: 90px;
+                margin-right: 30px;
+            }
+        }
+    }
+}

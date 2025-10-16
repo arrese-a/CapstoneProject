@@ -1,0 +1,68 @@
+@use "./variables" as *;
+
+@mixin base-grid() {
+    display: grid;
+    grid-gap: 21px;
+}
+
+@mixin responsive-font($max-width, $scale-percent) {
+  @media (max-width: $max-width) {
+    font-size: calc(1em * #{$scale-percent});
+  }
+}
+
+@mixin estiloColumna(){
+    .titulo {
+        font-size: 40px !important;
+        text-align: center;
+    }
+
+    .input-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        width: 300px;
+    }
+
+    input{
+        border: none;
+        border-bottom: 1px solid rgba($titulo, 0.5);
+        background-color: transparent;
+        &:focus {
+            outline: none;
+            border-bottom: 1px solid rgba($titulo, 0.3);;
+            font-size: 1em;
+            background-color: $primario-receta;
+        }
+
+    }           
+
+    button {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        border: none;
+        background-color: $texto-claro;
+        color: $nav-color-letra;
+        font-size: 16px;
+        
+        &:hover {
+            background-color: $texto-desc;
+            color: $texto-claro;
+        }
+        
+    }
+
+    .error-login {
+        color: rgb(173, 26, 26);
+        margin-top: 15px;;
+        font-size: 1.1em;
+        font-weight: 600;
+    }
+
+    .signup-desde-login {
+        margin-top: 15px;
+    }
+}

@@ -1,0 +1,203 @@
+@use "./variables" as *;
+.receta-container {
+    padding: $padding-base;
+
+    .encabezado-receta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .encabezado-derecha {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+        .buscador-ingredientes {
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            input {
+                width: 0;
+                opacity: 0;
+                padding: 0;
+                border: none;
+                outline: none;
+                border-radius: 8px;
+                transition: all 0.3s ease;
+                background-color: $subrayado;
+            }
+
+            &:hover input, &:focus-within input{
+                width: 200px;
+                opacity: 1;
+                padding: 8px 12px;
+                border: 1px solid rgba($titulo, 0.3);
+            }
+
+            .lupa-buscador {
+                background-color: transparent;
+                color: $titulo;
+                border: none;
+                font-size: 1.8em;
+                padding: 8px 10px;
+                cursor: pointer;
+                transition: ease-in-out 0.3s;
+            }
+        }
+
+
+        .btn-agregar {
+            margin-right: 50px;
+            font-size: 2em;
+            color: $titulo;
+            position: relative; 
+            display: inline-block;
+
+            .helper {
+                visibility: hidden;   
+                opacity: 0;
+                position: absolute;
+                top: -30px;           
+                left: -50px;
+                transform: translateX(-50%);
+                background-color:$titulo;
+                color: $texto-claro;
+                padding: 5px 8px;
+                border-radius: 2px;
+                font-size: 0.8rem;
+                white-space: nowrap;
+                transition: opacity 0.3s ease;
+            }
+            &:hover .helper {
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.lista-recetas {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px; 
+    padding: 20px 0;
+}
+
+.receta-todo {
+    border-radius: 5px;
+    overflow: hidden;
+    padding: 30px;
+    box-shadow: 0 2px 5px rgba($titulo, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+    background-color: $primario-receta;
+    position: relative;
+    a {
+        text-decoration: none;
+        color: $texto-desc;
+    }
+}
+.receta-todo:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 2px 5px $titulo;
+}
+
+.imagen-receta {
+    width: 100%;
+    height: 200px;
+    background-color: transparent;; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.imagen-receta img {
+    width: 70%; 
+    height: 100%;
+    object-fit: cover; 
+    border-radius: 5px;
+}
+
+
+.titulo-receta {
+    margin-bottom: 15px;
+    font-weight: bold;
+    text-align: center;
+    border-bottom: 1px solid $subrayado-oscuro;
+    .tiempo-icono{
+        margin-right: 5px;
+    }
+}
+
+.tiempo-receta {
+    font-size: 1em;
+    font-style: italic;
+    color: $texto-claro; 
+    font-weight: 600;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.bloque-receta {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.ingredientes {
+    flex:1;
+    text-align: left;
+    h3 {
+        font-size: 1.4em;
+        color: $titulo;
+        margin-top: 0;
+        margin-bottom: 12px;
+    };
+    ul {
+        list-style-type: none;
+        padding-left: 0;
+    }
+
+    li {
+        line-height: 1.8;
+        color: $texto-desc;
+        position: relative;
+        padding-left: 18px;
+    }
+
+    li::before {
+        content: "•";
+        color: #A87C7C;
+        font-size: 1.2em;
+        position: absolute;
+        left: 0;
+    }
+}
+
+
+@media (max-width: 600px) {
+    .lista-recetas {
+        grid-template-columns: 1fr;
+    }
+    .imagen-receta {
+        width: 100%;
+        height: 100px;
+        background-color: transparent;; 
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 4rem;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .imagen-receta img {
+        width: 50%; 
+        height: 100%;
+        object-fit: cover; 
+        border-radius: 5px;
+    }
+}

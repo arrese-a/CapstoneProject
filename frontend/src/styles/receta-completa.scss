@@ -1,0 +1,106 @@
+@use "./variables" as *;
+.receta-completa {
+    padding: $padding-base;
+    display: flex;
+    flex-direction: column;
+    
+}
+h3 {
+    font-size: 1.4em;
+    margin-top: 0;
+    margin-bottom: 12px;
+    text-decoration: underline
+};
+.encabezado-receta {
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+
+   .titulo {
+        display: flex;
+        justify-content: space-between;
+        margin-right: 50px;
+    }
+
+    .botones-receta {
+        display: flex;
+        gap: 15px;
+    
+        button {
+            font-size: 1.3em;
+            background-color: transparent;
+            border: none;
+            color:$titulo;
+            .favorito-activado {
+                color: gold;
+                text-shadow:2px 2px 5px black !important;
+            }
+
+
+            &:hover {
+                background-color: $subrayado-invisible;
+                font-size: 1.2em;
+            }
+        }
+    }
+
+}
+    .tiempo-prep {
+        font-size: 1em;
+        font-style: italic;
+        color: $texto-claro; /* Rosa Polvo, nuestro acento cálido */
+        font-weight: 600;
+        margin-bottom: 20px;
+    }
+
+    .bloque-ing-img{
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 40px;
+        align-items: flex-start;
+
+        .ingredientes {
+            text-align: left;
+            
+            ul {
+                list-style-type: none;
+                padding-left: 10px;
+            }
+
+            li {
+                line-height: 1.8;
+                color: $texto-desc; 
+                position: relative;
+                padding-left: 18px;
+            }
+        }
+
+
+        .imagen-receta {
+
+            margin-top: 20px;
+            margin-right: 100px;
+            display: flex; 
+            justify-content: center;
+            align-items: center; 
+        }
+
+        .imagen-receta img {
+            max-width: 100%; 
+            height: auto;
+            border-radius: 3px; 
+            display: block; 
+        }
+    }
+
+ .preparacion {
+        color: $texto-desc ;
+        font-size: 1em;
+}
+
+.reproductor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}

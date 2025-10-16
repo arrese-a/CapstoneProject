@@ -1,0 +1,46 @@
+@forward  "./variables.scss";
+@forward  "./mixins.scss";
+@forward  "./base.scss";
+@forward  "./home.scss";
+@forward  "./navigation-bar.scss";
+@forward  "./receta-item.scss";
+@forward  "./receta-completa.scss";
+@forward "./rich-text-editor.scss";
+@forward "./login.scss";
+@forward "./signup.scss";
+@forward "./receta-crear.scss";
+@forward "./lista-compra.scss";
+
+@use "./variables" as *;
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $letra-titulo;
+    color: $titulo;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.helper {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    bottom: 120%; 
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 5px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    transition: opacity 0.3s ease;
+    &:hover {
+    visibility: visible;
+    opacity: 1;
+  }
+
+}
+

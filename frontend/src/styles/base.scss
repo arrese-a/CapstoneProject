@@ -1,0 +1,21 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+body {
+    margin: 0px;
+    padding-top: 60px;
+    font-family: "Josefin Sans", sans-serif;
+    background-color: $fondo;
+    color: $letra-base;
+    @include responsive-font(600px, 0.8);
+}
+
+.base {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.error-msg {
+    color:darkred;
+    font-weight: 500;
+}

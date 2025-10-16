@@ -1,0 +1,42 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+
+
+.login-wrapper{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: calc(100vh - 60px);
+    background-image: url("../../public/fondo-login.png"); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    padding-right: 80px;
+
+    .columna-izquierda-login{
+        display:grid;
+        grid-template-columns: 1fr;
+        align-items: center;
+        justify-items: end;
+        width: 100%;
+        margin-bottom: 30vh;
+        @include estiloColumna();
+    }
+}
+
+@media (max-width: 600px) {
+    .login-wrapper {
+        grid-template-columns: 1fr;
+        height: auto;
+        padding: 0;
+        background-image: none;
+        .columna-izquierda-login{
+            justify-items: center;
+
+            .input-wrapper input {
+                margin-bottom: 10px;
+            }
+
+        }
+    }
+}
