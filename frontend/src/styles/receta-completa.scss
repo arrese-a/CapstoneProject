@@ -104,3 +104,17 @@ h3 {
     align-items: center;
     margin-top: 30px;
 }
+@media (max-width: 600px) {
+    .bloque-ing-img{
+        .imagen-receta {
+            width: 160px;
+            margin-right: 30px !important;
+            img {
+                width: 160px;
+                height: 100%;
+                object-fit: cover;
+            }
+
+        }
+    }
+}
